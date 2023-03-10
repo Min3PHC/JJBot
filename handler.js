@@ -6,7 +6,7 @@ const openai = new OpenAIApi(configuration);
 
 module.exports = index = async (api,event) => {
   const response = await openai.createCompletion({
-    model: "text-davinci-003",
+    model: "gpt-3.5-turbo",
     prompt: event.body,
     temperature: 0.3,
     max_tokens: 3000,

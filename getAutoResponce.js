@@ -1,12 +1,8 @@
-const messages = [
-  "Hello Im JiJay A.I! How can I help you today?",
-  "Hi there! What can I assist you with?",
-  "Hey! How can I be of service?",
-];
+const openai = require('openai');
 
-const getAutoResponse = () => {
-  const randomIndex = Math.floor(Math.random() * messages.length);
-  return messages[randomIndex];
-};
+const message = process.argv[2];
 
-module.exports = getAutoResponse;
+openai.prompt(message, function(err, result) {
+    console.log(result.text);
+});
+
